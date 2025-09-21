@@ -199,7 +199,7 @@ ol,
 ul {
   text-align: left;
   max-width: 700px;
-  margin: 1em auto;
+  margin: 1em 0; /* remove auto centering so lists can align left inside rules */
 }
 
 .partecipate{
@@ -246,19 +246,164 @@ ul {
   }
   /* on small screens let the line flow normally below the left image */
   .images-row .line { position: static; transform: none; margin: 0.5em auto 0; }
-  .images-row .rules { position: static; left: auto; top: auto; transform: none; width: auto; padding-left: 0; }
 }
 
-/* .rules anchor styling for visibility */
-.rules a {
-  color: #1a5fb4;
-  font-weight: bold;
-  text-decoration: underline;
+.rules{
+  font-size: 1.8rem;
+
+  display: block;
+  width: 100%;
+  background: transparent;
+  text-align: left;
+  margin: 0 0 2em; /* remove large right/left margin so section can align to left */
+  padding: 1em 1.5em;
+  margin-left: 1.5em; /* shift the rules closer to the left edge */
 }
+
+.imgDino img {
+  width: 100%;
+  max-width: 560px; /* make the dino larger */
+  margin: 1em 1em 0; /* push the dino lower a bit */
+  margin-left: 5em;
+}
+
+/* CTA buttons */
+.cta-row {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  margin: 7em 0 1.2em; /* increased top margin to lower the buttons */
+}
+.btn {
+  display: inline-block;
+  padding: 0;
+  border-radius: 0; /* remove rounding so only the image defines shape */
+  text-decoration: none;
+  box-shadow: none; /* remove shadow so only the image is visible */
+}
+
+
+.btn img {
+  display: block;
+  height: auto;
+  max-height: 240px; /* larger image buttons */
+  width: auto;
+}
+
+/* Arrange rules content: list left, image right */
+.rules .imgDino { flex: 0 0 auto; }
+.rules ul { flex: 1 1 580px; }
+
+/* New wrapper: place list and image side-by-side while keeping h2 above */
+.rules-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 2em;
+  justify-content: flex-start;
+}
+
+.rules h2 {
+  max-width: 700px; /* limit to the list width so it can be centered */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.6em;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .rules-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .imgDino img { max-width: 320px; }
+}
+
+/* extra spacing so content after CTA is lower on the page */
+.rules { margin-top: 1.6em; }
+.hero + .hero { margin-top: 1.6em; }
+
 
 @media (min-width: 800px) {
   .kit-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5em;
   }
+}
+
+/* Final section: center and enlarge */
+.final {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 900px;
+  margin: 2.4em auto;
+  padding: 1em;
+}
+.final h2 { font-size: 2.6rem; margin-bottom: 0.4em; margin-left: 0; width: 100%; text-align: center; }
+.final p { font-size: 1.5rem; margin-bottom: 0.8em; }
+.final ul { list-style: none; padding: 0; }
+.final li { font-size: 1.6rem; margin: 0.6em 0; }
+
+/* Channel highlight */
+.channel {
+  color: #3366cc;
+  font-weight: 800;
+  background: rgba(51,102,204,0.08);
+  padding: 0.12em 0.4em;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.channel:hover {
+  background: rgba(51,102,204,0.16);
+  transform: translateY(-2px);
+}
+
+.final p.highlight { color: #bd8100; font-weight: bold; }
+
+@media (max-width: 600px) {
+  .final h2 { font-size: 1.6rem; }
+  .final li { font-size: 1.1rem; }
+}
+
+/* Starter ideas section */
+.start {
+  text-align: center;
+  max-width: 900px;
+  margin: 2em auto;
+  padding: 1em;
+}
+.start h2 { font-size: 2.4rem; margin-bottom: 0.4em; }
+.start h2 { margin-left: 0; width: 100%; text-align: center; }
+.start p { font-size: 1.6rem; line-height: 1.5; margin-bottom: 0.8em; text-align: left; }
+.start-row { display: flex; align-items: center; gap: 2em; justify-content: flex-start; }
+.start-text { flex: 1 1 60%; display: flex; gap: 1.2em; align-items: center; }
+.start-illu { flex: 0 0 360px; }
+.start-illu img { max-width: 360px; display: block; margin: 0 auto; }
+.find-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  background: #3a8ee6;
+  color: #fff;
+  padding: 1em 1.6em;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.25rem;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.find-btn:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.16); }
+
+@media (max-width: 600px) {
+  .start p { font-size: 1.1rem; }
+  .start-row { flex-direction: column; align-items: center; }
+  .start-text { text-align: center; }
+  .start-illu { margin-top: 1em; }
+  .btn img { max-height: 140px; }
+  .start-illu img { max-width: 140px; }
+  .find-btn { padding: 0.6em 1em; font-size: 1rem; }
 }

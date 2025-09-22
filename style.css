@@ -114,6 +114,17 @@ h2 {
   font-family: 'JejuHallasan', cursive, sans-serif;
 }
 
+.Hyes {
+  color: #2a6a00;
+  font-weight: bold;
+  font-family: 'JejuHallasan', cursive, sans-serif;
+}
+
+.Hno {
+  color: #e01111;
+  font-weight: bold;
+  font-family: 'JejuHallasan', cursive, sans-serif;
+}
 
 .kit {
   background: #d8e0b4;

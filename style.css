@@ -13,24 +13,31 @@ body {
   font-size: 18px;
   /* increase base font size */
   background: #a3b37f;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-attachment: fixed;
   color: #09035b;
   line-height: 1.6;
   text-align: center;
+  overflow-x: hidden;
 }
 
 /* Headings used in the page */
 h2 {
   color: #f8f3d4;
   text-shadow: 2px 2px #3a3a3a;
-  margin: 1em 0;
+  margin: 1em auto;
   font-size: 2.4rem;
   /* larger */
-  margin-left: 20em;
+  max-width: 90%;
 }
 
 /* Title image in the head */
 .title img {
-  max-width: 1200px;
+  max-width: 100%;
+  width: 100%;
   display: block;
   margin: 1.2em auto 0.3em;
   /* reduced top spacing */
@@ -159,9 +166,12 @@ h2 {
 }
 
 .kit-item img {
-  width: 1000px;
+  width: 100%;
+  max-width: 800px;
   margin-bottom: 0.5em;
-  margin-left: 10em;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .kit-item p {
@@ -185,7 +195,7 @@ h2 {
   gap: 1em;
   width: 100%;
   max-width: 1100px; /* match content width */
-  margin-left: 3em; /* center within section */
+  margin: 0 auto; /* center within section */
 }
 .images-row .imgRasp { flex: 0 0 auto; }
 
@@ -221,7 +231,8 @@ ul {
   /* place to the right of the centered line image; 140px is approx half line width + spacing */
   top: 50%;
   transform: translateY(-50%);
-  width: 1000px;
+  width: calc(50% - 160px);
+  max-width: 600px;
   background: transparent;
   text-align: left;
   margin: 0;
@@ -261,21 +272,19 @@ ul {
 
 .rules{
   font-size: 1.8rem;
-
   display: block;
   width: 100%;
+  max-width: 1200px;
   background: transparent;
   text-align: left;
-  margin: 0 0 2em; /* remove large right/left margin so section can align to left */
+  margin: 0 auto 2em; /* center the section */
   padding: 1em 1.5em;
-  margin-left: 1.5em; /* shift the rules closer to the left edge */
 }
 
 .imgDino img {
   width: 100%;
   max-width: 560px; /* make the dino larger */
-  margin: 1em 1em 0; /* push the dino lower a bit */
-  margin-left: 5em;
+  margin: 1em auto 0; /* center and push the dino lower a bit */
 }
 
 /* CTA buttons */

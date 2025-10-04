@@ -7,6 +7,10 @@
   font-display: swap;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: 'JejuHallasan', cursive, sans-serif;
@@ -223,7 +227,7 @@ ul {
   margin: 1em 0; /* remove auto centering so lists can align left inside rules */
 }
 
-.partecipate{
+.participate{
   font-size: 1.8rem;
   line-height: 1.5;
   position: absolute;
